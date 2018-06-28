@@ -1,0 +1,256 @@
+﻿{include file='public/header' /}
+<body>
+<a id="toptg"></a>
+{include file='public/header_log' /}
+<div id="nav-show-bg"></div>
+<script>
+ /*   $('#mobile-nav-btn').click(function(){
+        $('#header').addClass('navshow');
+        $('#nav-show-bg').css('display','block');
+    });
+    $('#nav-show-bg').click(function(){
+        $('#header').removeClass('navshow');
+        $(this).css('display','none');
+    });*/
+</script>
+{include file='public/header_nav' /}
+<div class="container" id="latest">
+
+    <div class="panel panel-default terms-panel">
+
+        <div class="panel-body">
+            <div class="terms-title">
+                全部分类：
+            </div>
+            <div class="terms-item-list">
+                <a class="terms-item" href="{:url('index/index')}">全部</a>
+
+                <a class="terms-item active" href="{:url('news/listing')}?tyid=1">
+                    校委领导
+                </a>
+
+                <a class="terms-item " href="{:url('news/listing')}?tyid=2">
+                    思想道德
+                </a>
+
+                <a class="terms-item " href="{:url('news/listing')}?tyid=3">
+                    学院文化
+                </a>
+
+                <a class="terms-item " href="{:url('news/listing')}?tyid=4">
+                    文明礼仪
+                </a>
+
+                <a class="terms-item " href="{:url('news/listing')}?tyid=5">
+                    活动阵地
+                </a>
+
+                <a class="terms-item " href="{:url('news/listing')}?tyid=6">
+                    学院环境
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-9 col">
+
+            <div class="post-list">
+
+                <div class="home-side-box mb-0">
+                    <h4 class="title mt-0 mb-10 hidden-xs hidden-sm">
+                        <i class="fa fa-bars">
+
+                        </i>
+                    </h4>
+                </div>
+
+
+                {volist name="news" id="vo"}
+                <div class="post-518 post mb-20">
+                            <a class="pull-left img-div" href="{:url('news/conn')}?newid={$vo.news_id}">
+                                <img src="__ROOT__/uploads/{$vo.news_img}">
+                            </a>
+
+                    <div class="post-right">
+
+                        <h2 class="title">
+                                    <a class="wto" href="{:url('news/conn')}?newid={$vo.news_id}">
+                                        {$vo.news_title}
+                                    </a>
+
+                        </h2>
+
+                        <div class="author mb-10">
+                                    <a class="avatar" href="">
+                                        <img src="__STATIC__/index/picture/xxlogin.jpg" alt="信息工程学院">
+                                    </a>
+                            <a href="">
+                                信息工程学院
+                            </a>
+                            <span class="dian">•</span>
+                            <span>{$vo.create_at|date="Y-m-d",###}</span>
+
+                            <div class="clearfix"></div>
+
+                        </div>
+
+                        <div class="entry mb-10" style="display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;">
+                            {$vo.news_con}
+                        </div>
+
+                        <ul class="list-inline mb-0">
+
+                            <li>
+                                <i class="glyphicon glyphicon-heart">
+
+                                </i> 0
+                            </li>
+
+                            <li>
+                                <i class="glyphicon glyphicon-eye-open">
+
+                                </i> 47
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="clearfix"></div>
+
+                </div>
+                {/volist}
+
+
+
+
+
+                <ul class="pagination">
+                    {$news->render()}
+                    <!--<li class='pnum disabled'><a href='javascript:;'>1/16</a>
+                    </li>
+                    <li class='first disabled'><a href='javascript:;'>&laquo;</a>
+                    </li><li class='prev disabled'><a href='javascript:;'>&lsaquo;</a>
+                </li>
+                    <li class="active"><a href="javascript:;">1</a>
+                    </li>
+                    <li>
+                        <a href="">2</a>
+                    </li>
+                    <li>
+                        <a href="">3</a>
+                    </li>
+                    <li>
+                        <a href="">4</a>
+                    </li>
+                    <li><a href="">5</a>
+                    </li>
+                    <li class='next'><a href="">&rsaquo;</a>
+                    <li class='last'><a href="">&raquo;</a>
+                </li>-->
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="col-sm-3 col hidden-xs hidden-sm">
+			<div class="home-side-box side-latest-post">
+				<h4 class="title mt-0 mb-10">
+					<i class="fa fa-fire"></i> 热门文章
+				</h4>
+				<ul class="media-list">
+                    {volist name="new_lis" id="vo"}
+                    <li class="media">
+						<div class="media-left" style="display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 1;
+overflow: hidden;">
+							<a class="wto" href="{:url('news/conn')}?newid={$vo.news_id}">
+								<img class="media-object"
+                                     src="__ROOT__/uploads/{$vo.news_img}"
+                                     alt="{$vo.news_title}">
+							</a>
+						</div>
+						<div class="media-body" style="display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;">
+							<h4 class="media-heading">
+								<a href="{:url('news/conn')}?newid={$vo.news_id}">{$vo.news_title}</a>
+							</h4>
+							<div class="excerpt">
+　　                              {$vo.news_con}
+                            </div>
+						</div>
+					</li>
+                    {/volist}
+
+
+
+
+
+
+
+
+
+                </ul>
+			</div>
+            <div class="home-side-box side-comment-list">
+					<h4 class="title mt-0 mb-10">
+						<i class="fa fa-commenting-o"></i> 最新评论
+					</h4>
+
+                <ul class="media-list">
+
+                </ul>
+
+            </div>
+
+        </div>
+	</div>
+</div>
+{include file='public/footer' /}
+<script>
+ /*   $('#searchModal').on('show.bs.modal', function (e) {
+        $('#header').removeClass('navshow');
+        $('#nav-show-bg').css('display','none');
+    });*/
+</script>
+
+<script>
+  /*  $('.cartNumber').keyup(function(){
+        var number = $(this).val();
+        if(number>0) {
+            $(this).parent('form').submit();
+        }
+    });*/
+</script>
+<div class="mobile-foot-nav visible-xs-block visible-sm-block">
+    <a class="mobile-foot-nav-item " href="">
+        <i class="fa fa-home"></i>
+    </a>
+    <a class="mobile-foot-nav-item " href="">
+        <i class="fa fa-archive"></i>
+    </a>
+    <a class="mobile-foot-nav-item " href="">
+        <i class="fa fa-star"></i>
+    </a>
+    <a class="mobile-foot-nav-item " href="">
+        <i class="fa fa-gears"></i>
+    </a>
+</div>
+
+
+<![endif]-->
+{include file='public/base_js' /}
+</body>
+</html>

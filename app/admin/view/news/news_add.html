@@ -1,0 +1,111 @@
+{include file='public/header' /}
+<body>
+<form class="layui-form" enctype="multipart/form-data" method="post" action="{:url('save')}">
+    <div class="layui-form-item">
+        <label for="link" class="layui-form-label">
+            <span class="x-red">*</span>新闻标题
+        </label>
+        <div class="layui-input-inline">
+            <input type="text" id="link" name="news_title"
+                   class="layui-input">
+        </div>
+    </div>
+
+
+    <!--<div class="layui-form-item">
+        <label for="link" class="layui-form-label" >
+            <span class="x-red">*</span>新闻
+        </label>
+        <div class="layui-input-inline">
+            <select name="news">
+                <option value="news_type">学院文化</option>
+                <option value="news_type">学院文化</option>
+                <option value="news_type">学院文化</option>
+            </select>
+        </div>
+    </div>-->
+    <div class="layui-form-item">
+        <label for="link" class="layui-form-label">
+            <span class="x-red">*</span>新闻类型
+        </label>
+        <div class="layui-input-inline">
+            <input type="text" id="link" name="news_type"
+                   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label for="link" class="layui-form-label">
+            <span class="x-red">*标注</span>
+        </label>
+        <div class="layui-input-inline">
+            <span class="x-red">1->校委领导<br>
+                2->思想道德<br>
+                3->学院文化<br>
+                4->文明礼仪<br>
+                5->活动阵地<br>
+                6->学院环境</span>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label for="link" class="layui-form-label">
+            <span class="x-red">*</span>新闻类型编号
+        </label>
+        <div class="layui-input-inline">
+            <input type="text" id="link" name="news_tyid"
+                   class="layui-input">
+        </div>
+    </div>
+
+
+
+
+    <div class="layui-form-item">
+        <label for="link" class="layui-form-label">
+            <span class="x-red">*</span>新闻作者
+        </label>
+        <div class="layui-input-inline">
+            <input type="text" id="link" name="news_aut"
+                   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label for="link" class="layui-form-label">
+            <span class="x-red">*</span>新闻主题图片
+        </label>
+        <div class="layui-input-inline">
+            <div class="site-demo-upbar">
+                <input type="file" name="news_img"  id="link">
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+
+    <div style="margin-left: 20px;">
+        <span class="x-red">*</span>新闻内容：
+    <textarea id="editor_id" name="news_con" cols="90" rows="30">
+
+    </textarea>
+    </div>
+    <br>
+    <div class="layui-form-item">
+        <label for="add" class="layui-form-label">
+        </label>
+        <button  class="layui-btn" lay-filter="add" lay-submit="" id="add" type="submit">
+            增加
+        </button>
+    </div>
+
+</form>
+</div>
+<script> KE.show({id : 'editor_id'});</script>
+{include file='public/base_js' /}
+
+
+</body>
+
+</html>

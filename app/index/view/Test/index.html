@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {foreach $new_list as $vo }
+
+
+    <tr>
+        <tb>{$vo.news_id}</tb>
+        <tb>{$vo.news_type}</tb>
+        <tb>{$vo.news_aut}</tb>
+        <tb>{$vo.create_at}</tb>
+    </tr>
+<hr>
+
+    {/foreach}
+
+</body>
+</html>
